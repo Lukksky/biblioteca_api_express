@@ -1,4 +1,125 @@
-Durante o desenvolvimento vimos na prática dois componentes-chave no desenvolvimento de uma API REST: models e controllers.
+[Alura API express node.postman_collection.json](https://github.com/user-attachments/files/18856920/Alura.API.express.node.postman_collection.json)## Collection das requisições
+[Uploa{
+	"info": {
+		"_postman_id": "c5b91615-12da-412b-8434-a864592700f9",
+		"name": "Alura API express node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27971575"
+	},
+	"item": [
+		{
+			"name": "Livros",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/livros/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"livros",
+						"{{id}}"
+					]
+				},
+				"description": "Generated from cURL: curl --location --request GET 'localhost:3000/livros' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \r\n    \"titulo\": \"Aprendendo JavaScript - O guia definitivo\"\r\n\r\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Busca livros",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/livros",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"livros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar titulo do livro",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"{{nome_do_livro_a_ser_alterado}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/livros/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"livros",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar livros",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{id}},\r\n    \"titulo\": \"{{nome_do_livro}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/livros",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"livros"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}ding Alura API express node.postman_collection.json…]()
+
+
+
+Durante o desenvolvimento pude construir na prática dois componentes-chave no desenvolvimento de uma API REST: models e controllers de "MVC"
 
 Quando desenvolvemos uma aplicação, seja uma API REST como a nossa livraria ou outros tipos de API, é normal organizarmos o código em “camadas”, ou seja, em conjuntos de código separados de acordo com sua função.
 
