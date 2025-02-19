@@ -1,4 +1,11 @@
-Durante o desenvolvimento vimos na prática dois componentes-chave no desenvolvimento de uma API REST: models e controllers.
+## Collection das requisições
+
+[Alura API express node.postman_collection.json](https://github.com/user-attachments/files/18856920/Alura.API.express.node.postman_collection.json)
+
+
+## Resumo
+
+Durante o desenvolvimento pude construir na prática dois componentes-chave no desenvolvimento de uma API REST: models e controllers de "MVC"
 
 Quando desenvolvemos uma aplicação, seja uma API REST como a nossa livraria ou outros tipos de API, é normal organizarmos o código em “camadas”, ou seja, em conjuntos de código separados de acordo com sua função.
 
