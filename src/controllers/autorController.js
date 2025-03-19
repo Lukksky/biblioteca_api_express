@@ -13,50 +13,57 @@ class AutorController {
         
     };
 
-    static async listarAutorPorId (req, res) {
+    static async listarAutorPorId (req, res, next) {
         try {
             const id = req.params.id;
             const autorEncontrado = await autor.findById(id);
-            res.status(200).json(autorEncontrado);
+
+            if (autorEncontrado !== null) {
+                res.status(200).json(autorEncontrado);
+            
+            } else {
+                res.status(404).json({ message: `Id do Autor não localizado` });
+            }
 
         } catch (err) {
-            res.status(500).json({ message: `${err.message} - falha na requisição do livro` });
+           next(err);
+            
         }
         
     };
 
-    static async cadastrarAutor (req, res) {
+    static async cadastrarAutor (req, res, next) {
         try {
             const novoAutor = await autor.create(req.body);
             res.status(201).json({  message: "criado com sucesso", autor: novoAutor})
 
         } catch (err) {
-            res.status(500).json({ message: `${err.message} - falha ao cadastrar livro` });
+           next(err)
 
         }
         
     };
 
-    static async atualizarAutor (req, res) {
+    static async atualizarAutor (req, res, next) {
         try {
             const id = req.params.id;
             await autor.findByIdAndUpdate(id, req.body);
             res.status(200).json({ message: "autor atualizado" });
 
         } catch (err) {
-            res.status(500).json({ message: `${err.message} - falha na atualização do autor` });
+            next(err)
         }
         
     };
 
-    static async deletarAutor(req, res) {
+    static async deletarAutor(req, res, next) {
         try {
             const id = req.params.id;
             await autor.findByIdAndDelete(id, req.body);
             res.status(200).json({ message: "autor excluído com sucesso" });
 
         } catch (err) {
-            res.status(500).json({ message: `${err.message} - falha na exclusão do autor` });
+            next(err)
         }
         
     };
